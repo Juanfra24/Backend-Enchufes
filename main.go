@@ -36,20 +36,22 @@ func main() {
 
 	defer db.Close()
 
-	db.Exec("CREATE DATABASE " + "Encuhfe")
+	result, err := db.Exec("CREATE DATABASE " + "Encuhfe")
 	if err != nil {
 		log.Fatal(err)
 	}
+	print(result)
+	/*
+		db.Exec("USE " + "Enchufe")
+		if err != nil {
+			log.Fatal(err)
+		}
 
-	db.Exec("USE " + "Enchufe")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	db.Exec("CREATE TABLE example ( id integer, data varchar(32) )")
-	if err != nil {
-		log.Fatal(err)
-	}
+		db.Exec("CREATE TABLE example ( id integer, data varchar(32) )")
+		if err != nil {
+			log.Fatal(err)
+		}
+	*/
 	//Host pagina
 	http.ListenAndServe(":"+port, nil)
 }
