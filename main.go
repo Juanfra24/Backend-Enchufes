@@ -1,10 +1,10 @@
 package main
 
 import (
-	//"database/sql"
+	"database/sql"
 	"net/http"
 	"os"
-	//_ "github.com/lib/pq"
+	_ "github.com/lib/pq"
 )
 
 func main() {
