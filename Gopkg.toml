@@ -32,3 +32,7 @@
 [[constraint]]
   name = "github.com/lib/pq"
   version = "1.0.0"
+[metadata.heroku]
+  root-package = "github.com/Juanfra24/GoTest"
+  go-version = "go1.11"
+  install = [ "./..." ]
