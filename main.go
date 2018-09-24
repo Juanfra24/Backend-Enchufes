@@ -33,9 +33,9 @@ func main() {
 	}
 	dat, err := db.Query("select * from nombre")
 	println(dat)
-	/*
-		defer db.Close()
 
+	defer db.Close()
+	/*
 		_, err = db.Exec("CREATE DATABASE " + "Encuhfe")
 		if err != nil {
 			panic(err)
