@@ -36,11 +36,6 @@ func main() {
 
 	defer db.Close()
 
-	result, err := db.Exec("CREATE DATABASE " + "Encuhfe")
-	if err != nil {
-		log.Fatal(err)
-	}
-	print(result)
 	/*
 		db.Exec("USE " + "Enchufe")
 		if err != nil {
