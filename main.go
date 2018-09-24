@@ -36,17 +36,17 @@ func main() {
 
 	defer db.Close()
 
-	_, err = db.Exec("CREATE DATABASE " + "Encuhfe")
+	db.Exec("CREATE DATABASE " + "Encuhfe")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	_, err = db.Exec("USE " + "Enchufe")
+	db.Exec("USE " + "Enchufe")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	_, err = db.Exec("CREATE TABLE example ( id integer, data varchar(32) )")
+	db.Exec("CREATE TABLE example ( id integer, data varchar(32) )")
 	if err != nil {
 		log.Fatal(err)
 	}
