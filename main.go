@@ -1,13 +1,15 @@
 package main
 
 import (
+	"bytes"
 	"net/http"
 	"os"
 )
 
 func main() {
-	fileServer := http.FileServer(http.Dir("App"))
-	http.Handle("/App/", http.StripPrefix("/App/", fileServer))
+	//fileServer := http.FileServer(http.Dir("App"))
+	//http.Handle("/App/", http.StripPrefix("/App/", fileServer))
+	http.HandleFunc("/", home)
 
 	port := os.Getenv("PORT")
 
@@ -15,7 +17,11 @@ func main() {
 		port = "8000"
 	}
 
-	http.ListenAndServe(":"+port, nil)
-	println("HELLO")
+	http.ListenAndServe(":3000", nil)
+
+}
+func home(w http.Response, r *http.Request) {
+	var b bytes.Buffer // A Buffer needs no initialization.
+	b.Write([]byte("Hello World"))
 
 }
