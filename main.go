@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bytes"
 	"net/http"
 	"os"
 )
@@ -19,6 +18,7 @@ func main() {
 	http.ListenAndServe(":8000", nil)
 
 }
+
 /*
 func home(w http.Response, r *http.Request) {
 	var b bytes.Buffer // A Buffer needs no initialization.
