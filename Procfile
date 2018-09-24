@@ -1,1 +1,1 @@
-web: github.com/Juanfra24/GoTest
+web: test-enchufe

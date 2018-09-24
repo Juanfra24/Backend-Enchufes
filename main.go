@@ -17,7 +17,7 @@ func main() {
 		port = "8000"
 	}
 
-	http.ListenAndServe(":3000", nil)
+	http.ListenAndServe(":8000", nil)
 
 }
 func home(w http.Response, r *http.Request) {
