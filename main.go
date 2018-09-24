@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	fileServer := http.FileServer(http.Dir("public"))
-	http.Handle("/public/", http.StripPrefix("/public/", fileServer))
+	fileServer := http.FileServer(http.Dir("App"))
+	http.Handle("/App/", http.StripPrefix("/App/", fileServer))
 
 	port := os.Getenv("PORT")
 
