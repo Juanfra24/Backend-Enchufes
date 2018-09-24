@@ -21,7 +21,7 @@ func main() {
 	if port == "" {
 		port = "8000"
 	}
-	/*
+	
 		//DB
 		db, err := sql.Open("postgres", os.Getenv("DATABASE_URL"))
 		if err != nil {
@@ -44,7 +44,7 @@ func main() {
 			if err != nil {
 				panic(err)
 			}
-	*/
+	
 	//Host pagina
 	http.ListenAndServe(":"+port, nil)
 }
