@@ -1,9 +1,20 @@
 {
-	"ImportPath": "test-enchufe",
+	"ImportPath": "github.com/Juanfra24/GoTest",
 	"GoVersion": "go1.11",
 	"GodepVersion": "v80",
 	"Packages": [
 		"./..."
 	],
-	"Deps": []
+	"Deps": [
+		{
+			"ImportPath": "github.com/lib/pq",
+			"Comment": "v1.0.0",
+			"Rev": "4ded0e9383f75c197b3a2aaa6d590ac52df6fd79"
+		},
+		{
+			"ImportPath": "github.com/lib/pq/oid",
+			"Comment": "v1.0.0",
+			"Rev": "4ded0e9383f75c197b3a2aaa6d590ac52df6fd79"
+		}
+	]
 }
