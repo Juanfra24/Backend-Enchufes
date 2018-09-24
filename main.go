@@ -1,9 +1,11 @@
 package main
 
 import (
-	"database/sql"
+	"log"
 	"net/http"
 	"os"
+
+	"database/sql"
 
 	_ "github.com/lib/pq"
 )
@@ -27,25 +29,28 @@ func main() {
 	connStr := "user=ozpxpneydsssjv dbname=db1sk6s96gfi85 sslmode=require"
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
-	defer db.Close()
+	dat, err := db.Query("select * from nombre")
+	println(dat)
+	/*
+		defer db.Close()
 
-	_, err = db.Exec("CREATE DATABASE " + "Encuhfe")
-	if err != nil {
-		panic(err)
-	}
+		_, err = db.Exec("CREATE DATABASE " + "Encuhfe")
+		if err != nil {
+			panic(err)
+		}
 
-	_, err = db.Exec("USE " + "Enchufe")
-	if err != nil {
-		panic(err)
-	}
+		_, err = db.Exec("USE " + "Enchufe")
+		if err != nil {
+			panic(err)
+		}
 
-	_, err = db.Exec("CREATE TABLE example ( id integer, data varchar(32) )")
-	if err != nil {
-		panic(err)
-	}
-
+		_, err = db.Exec("CREATE TABLE example ( id integer, data varchar(32) )")
+		if err != nil {
+			panic(err)
+		}
+	*/
 	//Host pagina
 	http.ListenAndServe(":"+port, nil)
 }
